@@ -1,3 +1,4 @@
+using KanakketuppuApi.Model.ContactModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KanakketuppuApi.Controllers
@@ -6,9 +7,9 @@ namespace KanakketuppuApi.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
-         // POST api/contact
+        // POST api/contact
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(ContactRequestModel contactRequestModel)
         {
             
         }
