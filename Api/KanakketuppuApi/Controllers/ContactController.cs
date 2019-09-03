@@ -9,9 +9,9 @@ namespace KanakketuppuApi.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
-        private readonly IContactService contactService;
+        private readonly IContactOpsService contactService;
         private readonly IContactApiMapper contactApiMapper;
-        public ContactController(IContactService contactService, IContactApiMapper contactApiMapper)
+        public ContactController(IContactOpsService contactService, IContactApiMapper contactApiMapper)
         {
             this.contactService = contactService;
             this.contactApiMapper = contactApiMapper;

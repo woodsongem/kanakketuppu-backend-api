@@ -6,9 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0-rc1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Ninject" Version="3.3.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
   </ItemGroup>
 
