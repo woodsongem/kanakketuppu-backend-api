@@ -3,7 +3,7 @@ using KanakketuppuApiCore.DataContracts;
 
 namespace KanakketuppuApiCore.ContactServiceCore.ContactService
 {
-    public interface IContactService
+    public interface IContactOpsService
     {
         Result CreateContact(ContactRequestMsgEntity contactRequestMsgEntity);
     }
