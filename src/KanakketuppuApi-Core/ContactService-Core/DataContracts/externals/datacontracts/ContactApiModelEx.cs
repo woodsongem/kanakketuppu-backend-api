@@ -1,4 +1,4 @@
-namespace KanakketuppuApiCore.ContactServiceCore.DataContracts.Externals
+namespace KanakketuppuApiCore.ContactServiceCore.DataContracts.Externals.Datacontracts
 {
     public class ContactApiModelEx
     {

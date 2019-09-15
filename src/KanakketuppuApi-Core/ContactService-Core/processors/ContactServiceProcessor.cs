@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using KanakketuppuApiCore.ContactServiceCore.DataContracts;
+using KanakketuppuApiCore.ContactServiceCore.DataContracts.Commons;
+
 namespace KanakketuppuApiCore.ContactServiceCore.Processors
 {
     public class ContactServiceProcessor : IContactServiceProcessor
@@ -9,7 +13,7 @@ namespace KanakketuppuApiCore.ContactServiceCore.Processors
         }
         public List<ErrorMessage> ProcessorCreateContact(ContactRequestMsgEntity contactRequestMsgEntity)
         {
-
+            return null;
         }
 
         public List<ErrorMessage> CreateContact(ContactRequestMsgEntity contactRequestMsgEntity)

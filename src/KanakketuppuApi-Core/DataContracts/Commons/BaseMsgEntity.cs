@@ -1,3 +1,5 @@
+using System;
+
 namespace KanakketuppuApiCore.ContactServiceCore.DataContracts.Commons
 {
     public class BaseMsgEntity

@@ -1,5 +1,7 @@
+using System;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts;
 using KanakketuppuApiCore.ContactServiceCore.Mappers;
+using KanakketuppuApiCore.ContactServiceCore.Processors;
 using KanakketuppuApiCore.ContactServiceCore.Validations;
 using KanakketuppuApiCore.DataContracts;
 
@@ -12,10 +14,11 @@ namespace KanakketuppuApiCore.ContactServiceCore.ContactService
         private readonly IContactServiceMapper contactServiceMapper;
         private readonly IContactServiceProcessor contactServiceProcessor;
 
-        public ContactOpsService(IContactServiceValidation contactServiceValidation,
-                                 IContactServiceVerify contactServiceVerify,
-                                 IContactServiceMapper contactServiceMapper,
-                                 IContactServiceProcessor contactServiceProcessor)
+        public ContactOpsService(
+            IContactServiceValidation contactServiceValidation,
+            IContactServiceVerify contactServiceVerify,
+            IContactServiceMapper contactServiceMapper,
+            IContactServiceProcessor contactServiceProcessor)
         {
             this.contactServiceValidation = contactServiceValidation;
             this.contactServiceVerify = contactServiceVerify;
@@ -32,13 +35,10 @@ namespace KanakketuppuApiCore.ContactServiceCore.ContactService
             var resultMessage = contactServiceValidation.ValidCreateContact(contactRequestMsgEntity);
 
             //Verifier
-            resultMessage = contactServiceVerifier.VerifyCreateContact(contactRequestMsgEntity);
+            resultMessage = contactServiceVerify.VerifyCreateContact(contactRequestMsgEntity);
 
             //Processor
             resultMessage = contactServiceProcessor.ProcessorCreateContact(contactRequestMsgEntity);
-
-            //PostProcessor
-            var postResultMessage = contactServicePostProcessor.PostProcessorCreateContact(contactRequestMsgEntity);
 
             return new Result() { ResultStatus = resultMessage.ToStatus(), ErrorMessages = resultMessage };
         }
