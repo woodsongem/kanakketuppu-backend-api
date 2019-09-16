@@ -1,6 +1,7 @@
 using Autofac;
 using KanakketuppuApiCore.ContactServiceCore.ContactService;
 using KanakketuppuApiCore.ContactServiceCore.Mappers;
+using KanakketuppuApiCore.ContactServiceCore.Processors;
 using KanakketuppuApiCore.ContactServiceCore.Validations;
 
 namespace KanakketuppuApiCore.ContactServiceCore.ContactServiceModules
@@ -17,7 +18,8 @@ namespace KanakketuppuApiCore.ContactServiceCore.ContactServiceModules
             builder.Register(x => new ContactOpsService(
                 x.Resolve<IContactServiceValidation>(),
                 x.Resolve<IContactServiceVerify>(),
-                x.Resolve<IContactServiceMapper>()))
+                x.Resolve<IContactServiceMapper>(),
+                x.Resolve<IContactServiceProcessor>()))
             .As<IContactOpsService>()
             .InstancePerLifetimeScope();
         }

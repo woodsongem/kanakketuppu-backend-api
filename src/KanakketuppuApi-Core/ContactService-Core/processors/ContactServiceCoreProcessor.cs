@@ -5,6 +5,7 @@ using KanakketuppuApiCore.ContactServiceCore.DataContracts.Commons;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts.Externals.Datacontracts;
 using KanakketuppuApiCore.ContactServiceCore.Processors.Mappers;
 using KatavuccolRestClient.Client;
+using KatavuccolRestClient.DataContracts;
 
 namespace KanakketuppuApiCore.ContactServiceCore.Processors
 {
@@ -23,7 +24,7 @@ namespace KanakketuppuApiCore.ContactServiceCore.Processors
         {
             ContactApiModelEx contactApiModelEx = contactServiceCoreProcessorMapper.MapContactApiModelEx(contactRequestMsgEntity);
             CreateContactIPost createContactIPost = new CreateContactIPost();
-            katavuccolRestClient.Post(createContactIPost);
+            RestResponse restResponse = katavuccolRestClient.Post(createContactIPost);
             return null;
         }
     }
