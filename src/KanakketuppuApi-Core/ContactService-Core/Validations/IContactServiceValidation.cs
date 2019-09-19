@@ -1,16 +1,17 @@
 using System.Collections.Generic;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts.Commons;
+using ParallelProcessors.DataContracts;
 
 namespace KanakketuppuApiCore.ContactServiceCore.Validations
 {
     public interface IContactServiceValidation
     {
         List<ErrorMessage> ValidCreateContact(ContactRequestMsgEntity contactRequestMsgEntity);
-         List<ErrorMessage> IsCreateContactMsgEntityValid(ContactRequestMsgEntity createContactMsgEntity);
-        List<ErrorMessage> IsCustomerNameValid(ContactRequestMsgEntity createContactMsgEntity);
-        List<ErrorMessage> IsEmailAddressValid(ContactRequestMsgEntity createContactMsgEntity);
-        List<ErrorMessage> IsMessageValid(ContactRequestMsgEntity createContactMsgEntity);
-        List<ErrorMessage> IsSubjectValid(ContactRequestMsgEntity createContactMsgEntity);
+         List<ActionErrorMessage> IsCreateContactMsgEntityValid(ContactRequestMsgEntity createContactMsgEntity);
+        List<ActionErrorMessage> IsCustomerNameValid(ContactRequestMsgEntity createContactMsgEntity);
+        List<ActionErrorMessage> IsEmailAddressValid(ContactRequestMsgEntity createContactMsgEntity);
+        List<ActionErrorMessage> IsMessageValid(ContactRequestMsgEntity createContactMsgEntity);
+        List<ActionErrorMessage> IsSubjectValid(ContactRequestMsgEntity createContactMsgEntity);
     }
 }

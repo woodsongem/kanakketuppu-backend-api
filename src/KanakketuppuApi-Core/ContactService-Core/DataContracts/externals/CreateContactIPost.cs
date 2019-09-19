@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using KatavuccolRestClient.DataContracts;
+using RestClient.DataContracts;
 
 namespace KanakketuppuApi_Core.ContactService_Core.datacontracts.externals
 {

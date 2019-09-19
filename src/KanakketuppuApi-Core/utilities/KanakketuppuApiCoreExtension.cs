@@ -3,9 +3,9 @@ using KanakketuppuApi_Core.DataContracts;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts.Commons;
 using KatavuccolCommon.Extensions;
 
-namespace KanakketuppuApiCore.Utility
+namespace KanakketuppuApiCore.Utilities
 {
-    public static class KanakketuppuApiCoreUtility
+    public static class KanakketuppuApiCoreExtension
     {
         public static Status ToStatus(this List<ErrorMessage> value)
         {

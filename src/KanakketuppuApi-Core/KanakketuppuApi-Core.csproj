@@ -7,7 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0-rc1" />
-    <PackageReference Include="KatavuccolRestClient" Version="1.0.2" />
+    <PackageReference Include="KatavuccolParallelProcessor" Version="1.0.1" />
+    <PackageReference Include="KatavuccolRestClient" Version="1.0.4" />
   </ItemGroup>
 
 </Project>

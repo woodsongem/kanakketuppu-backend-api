@@ -4,7 +4,7 @@ using KanakketuppuApiCore.ContactServiceCore.Mappers;
 using KanakketuppuApiCore.ContactServiceCore.Processors;
 using KanakketuppuApiCore.ContactServiceCore.Validations;
 using KanakketuppuApiCore.DataContracts;
-using KanakketuppuApiCore.Utility;
+using KanakketuppuApiCore.Utilities;
 
 namespace KanakketuppuApiCore.ContactServiceCore.ContactService
 {

@@ -4,8 +4,8 @@ using KanakketuppuApiCore.ContactServiceCore.DataContracts;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts.Commons;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts.Externals.Datacontracts;
 using KanakketuppuApiCore.ContactServiceCore.Processors.Mappers;
-using KatavuccolRestClient.Client;
-using KatavuccolRestClient.DataContracts;
+using RestClient.Client;
+using RestClient.DataContracts;
 
 namespace KanakketuppuApiCore.ContactServiceCore.Processors
 {

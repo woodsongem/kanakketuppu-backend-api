@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Autofac;
 using KanakketuppuApi.Modules;
 using KanakketuppuApiCore.ContactServiceCore.ContactServiceModules;
+using KanakketuppuApiCore.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -80,6 +81,7 @@ namespace KanakketuppuApi
             // method or this won't be called.
             builder.RegisterModule(new KanakketuppuApiModule());
             builder.RegisterModule(new ContactServiceModule());
+            builder.RegisterModule(new KanakketuppuApiCoreModule());
 
         }
     }
