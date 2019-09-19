@@ -1,3 +1,4 @@
+using KanakketuppuApi_Core.ContactService_Core.datacontracts.externals;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts.Externals.Datacontracts;
 
@@ -7,7 +8,22 @@ namespace KanakketuppuApiCore.ContactServiceCore.Processors.Mappers
     {
         public ContactApiModelEx MapContactApiModelEx(ContactRequestMsgEntity contactRequestMsgEntity)
         {
-            throw new System.NotImplementedException();
+            return new ContactApiModelEx()
+            {
+                CustomerName = contactRequestMsgEntity.CustomerName,
+                EmailAddress = contactRequestMsgEntity.EmailAddress,
+                Message = contactRequestMsgEntity.Message,
+                Subject = contactRequestMsgEntity.Subject
+            };
+        }
+
+        public CreateContactIPost MapCreateContactIPost(ContactApiModelEx contactApiModelEx)
+        {
+            return new CreateContactIPost()
+            {
+                Request = contactApiModelEx,
+                
+            };
         }
     }
 }

@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts;
+using KanakketuppuApiCore.ContactServiceCore.DataContracts.Commons;
 using KanakketuppuApiCore.ContactServiceCore.Mappers;
 using KanakketuppuApiCore.ContactServiceCore.Processors;
 using KanakketuppuApiCore.ContactServiceCore.Validations;
 using KanakketuppuApiCore.DataContracts;
 using KanakketuppuApiCore.Utilities;
+using KatavuccolCommon.Extensions;
 
 namespace KanakketuppuApiCore.ContactServiceCore.ContactService
 {
@@ -26,7 +29,7 @@ namespace KanakketuppuApiCore.ContactServiceCore.ContactService
             this.contactServiceMapper = contactServiceMapper;
             this.contactServiceProcessor = contactServiceProcessor;
         }
-        public Result CreateContact(ContactRequestMsgEntity contactRequestMsgEntity)
+        public List<ErrorMessage> CreateContact(ContactRequestMsgEntity contactRequestMsgEntity)
         {
             //Setup
             contactRequestMsgEntity.CreatedOn = contactRequestMsgEntity.ModifiedOn = DateTime.UtcNow;
@@ -34,14 +37,26 @@ namespace KanakketuppuApiCore.ContactServiceCore.ContactService
 
             //Validation
             var resultMessage = contactServiceValidation.ValidCreateContact(contactRequestMsgEntity);
+            if (resultMessage.AnyWithNullCheck())
+            {
+                return resultMessage;
+            }
 
             //Verifier
             resultMessage = contactServiceVerify.VerifyCreateContact(contactRequestMsgEntity);
+            if (resultMessage.AnyWithNullCheck())
+            {
+                return resultMessage;
+            }
 
             //Processor
             resultMessage = contactServiceProcessor.ProcessorCreateContact(contactRequestMsgEntity);
+            if (resultMessage.AnyWithNullCheck())
+            {
+                return resultMessage;
+            }
 
-            return new Result() { ResultStatus = resultMessage.ToStatus(), ErrorMessages = resultMessage };
+            return resultMessage;
         }
     }
 }

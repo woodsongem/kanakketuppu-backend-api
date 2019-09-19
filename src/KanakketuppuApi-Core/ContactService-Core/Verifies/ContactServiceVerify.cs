@@ -8,7 +8,7 @@ namespace KanakketuppuApiCore.ContactServiceCore.Validations
     {
         public List<ErrorMessage> VerifyCreateContact(ContactRequestMsgEntity contactRequestMsgEntity)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

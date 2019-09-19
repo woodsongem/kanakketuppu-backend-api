@@ -46,9 +46,8 @@ namespace KanakketuppuApiCore.ContactServiceCore.Validations
                 Request = contactRequestMsgEntity
             });
 
-            var actionErrorMessages = parallelProcessor.Execute<ContactRequestMsgEntity>(parallelActions);
-            
-            return null;
+            return parallelProcessor.Execute<ContactRequestMsgEntity>(parallelActions).ToErrorMessages();
+
         }
 
         public List<ActionErrorMessage> IsCreateContactMsgEntityValid(ContactRequestMsgEntity contactRequestMsgEntity)
