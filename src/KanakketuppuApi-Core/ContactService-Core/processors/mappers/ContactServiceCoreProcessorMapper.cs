@@ -1,6 +1,7 @@
 using KanakketuppuApi_Core.ContactService_Core.datacontracts.externals;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts;
 using KanakketuppuApiCore.ContactServiceCore.DataContracts.Externals.Datacontracts;
+using KanakketuppuApiCore.Utilities;
 
 namespace KanakketuppuApiCore.ContactServiceCore.Processors.Mappers
 {
@@ -22,7 +23,7 @@ namespace KanakketuppuApiCore.ContactServiceCore.Processors.Mappers
             return new CreateContactIPost()
             {
                 Request = contactApiModelEx,
-                
+                Endpoint= KanakketuppuApiCoreConstants.KanakketuppuUtilityEndpoint
             };
         }
     }

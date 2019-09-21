@@ -27,7 +27,7 @@ namespace KanakketuppuApi
             .UseStartup<Startup>()
             .Build()
             .Run();
-           
+
             //CreateWebHostBuilder(args).Build().Run();
         }
 
