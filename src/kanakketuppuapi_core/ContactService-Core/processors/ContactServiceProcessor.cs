@@ -18,6 +18,7 @@ namespace KanakketuppuApiCore.ContactServiceCore.Processors
             this.contactServiceCoreProcessor = contactServiceCoreProcessor;
             this.parallelProcessor = parallelProcessor;
         }
+
         public List<ErrorMessage> ProcessorCreateContact(ContactRequestMsgEntity contactRequestMsgEntity)
         {
             var parallelActions = new List<ParallelAction<ContactRequestMsgEntity>>();

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>8370b227-fe43-4a9c-97f6-b7cff26e5763</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'KanakketuppuApi' ">
@@ -23,5 +25,8 @@
     <ProjectReference Include="..\kanakketuppuapi_model\kanakketuppuapi_model.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Dockerfile" />
   </ItemGroup>
 </Project>
